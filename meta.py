@@ -13,7 +13,6 @@
 class UserMeta(type):
 
     def new(cls, name, bases, namespace, **kwargs):
-        # چک کن اسم کلاس فعلی User نباشد و یکی از پایه‌ها "User" باشد
         is_user_subclass = any(b.name == "User" for b in bases)
         if name != "User" and is_user_subclass:
             if "get_permission" not in namespace:
