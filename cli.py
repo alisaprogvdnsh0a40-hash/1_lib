@@ -1,7 +1,7 @@
-from models import*
+from models import Guest,Member,Librarian,Library
 from session import LibSession
-
-#-------run0---------,
+from exceptions import*
+#-------run0---------
 Lib1 = Library()
 guest1 = Guest(1,"ali","ali@")
 member1 = Member(2,"reza","reza@")
