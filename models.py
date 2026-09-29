@@ -1,5 +1,6 @@
 from exceptions import LibraryError,BookNotAvailable,BookNotFound,PermissionDenied
 from meta import UserMeta
+
 class Book:
 
     def __init__(self,title,author,year,isbn,total_copies):
@@ -153,12 +154,17 @@ class Library:
             raise LibraryError("in ketab wojod darad")
         new_book = Book(title,author,year,isbn,total_copies)
         self.books[isbn] = new_book
+    
+    
     def remove_book(self,isbn):            
+    
         if not (isbn in self.books):
             raise LibraryError("in ketab mojod nist")
         print(f"ketab {self.books[isbn]} \n dar hal hazf...")
         del self.books[isbn]
         print("hazf shod")
+    
+    
     def increase_book(self,user,book,num):
         if len(user.get_permissions()) > 3:
             book.total_copies += num
