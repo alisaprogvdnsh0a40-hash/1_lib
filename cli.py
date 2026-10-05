@@ -70,15 +70,18 @@ def login1(user_id):
                 print("adad semat ra vared konid  \n"
                 "( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 )")
                 key = int(input())
+                
                 if key == 1:
                     for book in Lib1:
                         print(book)
+                
                 elif key == 2:
                     print("shabak ketab:")
                     shabak = str(input())
                     if not (shabak in Lib1):
                         raise LibraryError("shabak peyda nashod")
                     Lib1.borrow_book(Lib1[user_id],Lib1[shabak])
+                
                 elif key == 3:
                     print("shabak ketab:")
                     shabak = str(input())
