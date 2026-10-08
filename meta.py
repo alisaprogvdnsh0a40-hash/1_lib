@@ -12,9 +12,9 @@
 
 class UserMeta(type):
 
-    def new(cls, name, bases, namespace, **kwargs):
-        is_user_subclass = any(b.name == "User" for b in bases)
+    def __new__(cls, name, bases, namespace, **kwargs):
+        is_user_subclass = any(b.__name__ == "User" for b in bases)
         if name != "User" and is_user_subclass:
             if "get_permissions" not in namespace:
-                raise TypeError(f"class {name} does not have get_permission method!")
-        return super().new(cls, name, bases, namespace, **kwargs)
+                raise TypeError(f"class {name} nadarad get_permission method ro!")
+        return super().__new__(cls, name, bases, namespace, **kwargs)
