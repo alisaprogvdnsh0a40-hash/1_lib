@@ -18,3 +18,8 @@ class UserMeta(type):
             if "get_permissions" not in namespace:
                 raise TypeError(f"class {name} nadarad get_permission method ro!")
         return super().__new__(cls, name, bases, namespace, **kwargs)
+
+
+
+
+    
