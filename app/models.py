@@ -1,5 +1,5 @@
-from exceptions import LibraryError,BookNotAvailable,BookNotFound,PermissionDenied
-from meta import UserMeta
+from app.exceptions import LibraryError,BookNotAvailable,BookNotFound,PermissionDenied
+from app.meta import UserMeta
 
 class Book:
 
