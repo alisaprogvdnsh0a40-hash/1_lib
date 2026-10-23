@@ -1,10 +1,10 @@
 from app.exceptions import LibraryError,BookNotAvailable,BookNotFound,PermissionDenied
 from app.meta import UserMeta
-from app.discriptors import Discriptor_int
+from app.descriptors import Descriptor_int
 class Book:
     
-    total_copies : int = Discriptor_int()
-    available_copies : int = Discriptor_int()
+    total_copies : int = Descriptor_int()
+    available_copies : int = Descriptor_int()
 
     def __init__(self,title,author,year,isbn,total_cps):
         self.title = title

@@ -1,4 +1,4 @@
-class Discriptor_int:
+class Descriptor_int:
     def __set_name__(self,owner,name):
         self.private_name = '_' + name 
         print(name)
