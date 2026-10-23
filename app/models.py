@@ -1,15 +1,18 @@
 from app.exceptions import LibraryError,BookNotAvailable,BookNotFound,PermissionDenied
 from app.meta import UserMeta
-
+from app.discriptors import Discriptor_int
 class Book:
+    
+    total_copies : int = Discriptor_int()
+    available_copies : int = Discriptor_int()
 
-    def __init__(self,title,author,year,isbn,total_copies):
+    def __init__(self,title,author,year,isbn,total_cps):
         self.title = title
         self.author = author
         self.year = year
         self.isbn = isbn
-        self.total_copies = total_copies
-        self.available_copies = total_copies
+        self.total_copies = total_cps
+        self.available_copies = total_cps
 
     def __repr__(self):
         return f"Book:{self.title}"
@@ -21,7 +24,7 @@ class Book:
 # ----------------
 
     def __str__(self):
-        return f"zakhire shod : {self.title}| nevisande:{self.author}| sal va tedad copy:{self.year},{self.total_copies}|mojodi:{self.available_copies}/{self.total_copies}"
+        return f"isbn :{self.isbn}| name : {self.title}| nevisande:{self.author}| sal va tedad copy:{self.year},{self.total_copies}|mojodi:{self.available_copies}/{self.total_copies}"
 
     def borrow_book(self):
         if self.available_copies > 0:

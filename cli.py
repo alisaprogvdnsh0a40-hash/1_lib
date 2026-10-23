@@ -7,8 +7,8 @@ guest1 = Guest(1,"ali","ali@")
 member1 = Member(2,"reza","reza@")
 librarian1 = Librarian(3,"hamid","hamid@")
 
-Lib1.add_book("b1","author1",2000,"101_4",1)
-Lib1.add_book("b2","author1",2000,"102_3",1)
+Lib1.add_book(librarian1,"b1","author1",2000,"101_4",1)
+Lib1.add_book(librarian1,"b2","author1",2000,"102_3",1)
 
 Lib1.add_user(guest1)
 Lib1.add_user(member1)
