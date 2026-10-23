@@ -123,13 +123,13 @@ def login1(user_id):
 
                     print("total_copies:")
                     total_copies = int(input())
-                    Lib1.add_book(title,author,year,shabak,total_copies)
+                    Lib1.add_book(Lib1[user_id],title,author,year,shabak,total_copies)
                 elif key == 5:
                     
                     print("shabak:")
                     shabak = str(input())
 
-                    Lib1.remove_book(shabak)
+                    Lib1.remove_book(Lib1[user_id],shabak)
 
             print("barmigardid be meno?\n (na = 0),(bale =1)")
             choice = int(input())

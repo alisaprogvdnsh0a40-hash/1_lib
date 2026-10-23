@@ -149,20 +149,25 @@ class Library:
                 raise LibraryError("in fard dar ketabkhaneh mojod nist")
             return self.users[id_or_isbn]    
 # ----------------
-    def add_book(self,title,author,year,isbn,total_copies):
-        if isbn in self.books:
-            raise LibraryError("in ketab wojod darad")
-        new_book = Book(title,author,year,isbn,total_copies)
-        self.books[isbn] = new_book
+    def add_book(self,user,title,author,year,isbn,total_copies):
+        if len(user.get_permissions()) > 3:        
+            if isbn in self.books:
+                raise LibraryError("in ketab wojod darad")
+            new_book = Book(title,author,year,isbn,total_copies)
+            self.books[isbn] = new_book
+        else:
+            raise PermissionDenied("shoma ejaze nadarid")
     
     
-    def remove_book(self,isbn):            
-    
-        if not (isbn in self.books):
-            raise LibraryError("in ketab mojod nist")
-        print(f"ketab {self.books[isbn]} \n dar hal hazf...")
-        del self.books[isbn]
-        print("hazf shod")
+    def remove_book(self,user,isbn):            
+        if len(user.get_permissions()) > 3:
+            if not (isbn in self.books):
+                raise LibraryError("in ketab mojod nist")
+            print(f"ketab {self.books[isbn]} \n dar hal hazf...")
+            del self.books[isbn]
+            print("hazf shod")
+        else:
+            raise PermissionDenied("shoma ejaze nadarid")
     
     
     def increase_book(self,user,book,num):
