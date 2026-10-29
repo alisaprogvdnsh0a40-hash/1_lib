@@ -17,7 +17,10 @@
     |__meta.py
     |       |__UserMeta(type)
     |
-    |__exceprion.py
+    |__descriptors.py
+    |       |__Descriptor_int
+    |
+    |__exception.py
     |       |__LibraryError(Exception)
     |       |__BookNotFound(LibraryError)
     |       |__UserNotFound(LibraryError)
