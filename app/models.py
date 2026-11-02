@@ -50,6 +50,7 @@ class User(metaclass = UserMeta):
         self.name = name 
         self.email = email
         self.borrowed = 0
+        self.borrowed_list = []
 
     def __repr__(self):
         return f"Person:{self.name}"
@@ -61,7 +62,7 @@ class User(metaclass = UserMeta):
 # ----------------
 
     def __str__(self):
-        return f"user{self.user_id}= {self.name}({self.email})ba tedad amanat {self.borrowed}"
+        return f"user{self.user_id}= {self.name}({self.email})ba amanat {self.borrowed_list} tedad {self.borrowed}"
 
 class Guest(User):
     # def __init__(self, user_id, name, email):
@@ -199,6 +200,7 @@ class Library:
             if user.borrowed < 3 :    
                 if book.borrow_book():
                     user.borrowed += 1
+                    user.borrowed_list.append(book.isbn)
             else:
                 raise LibraryError("zarfiat amanat shoma 3/3 ast")
         else:
@@ -210,6 +212,7 @@ class Library:
                 if book.return_book():
     
                     user.borrowed -= 1    
+                    user.borrowed_list.remove(book.isbn)
             else:
                 raise LibraryError("chizi baray bargardandan nadarid")
 

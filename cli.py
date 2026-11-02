@@ -69,10 +69,13 @@ def login1(user_id):
 
             elif isinstance(Lib1[user_id],Member):
                 print("adad semat ra vared konid  \n"
-                "( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 )")
+                "(my_books = 0)  ( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 )")
                 key = int(input())
-                
-                if key == 1:
+
+                if key == 0:
+                    print(Lib1[user_id])
+
+                elif key == 1:
                     for book in Lib1:
                         print(book)
                 
@@ -92,10 +95,15 @@ def login1(user_id):
 
             elif isinstance(Lib1[user_id],Librarian):
                 print("adad semat ra vared konid  \n"
-                "( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 ) \n" \
+                "(my_books = 0)  ( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 ) \n" \
                 "( add_book= 4 ) ( remove_book= 5 )")
                 key = int(input())
-                if key == 1:
+            
+
+                if key == 0:
+                    print(Lib1[user_id])
+            
+                elif key == 1:
                     for book in Lib1:
                         print(book)
                 elif key == 2:
