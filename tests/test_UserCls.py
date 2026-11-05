@@ -1,4 +1,4 @@
-from app.models import Guest,Member,Librarian
+from app.models import Guest,Member,Librarian,User
 import pytest
 
 #-------------------
@@ -35,3 +35,11 @@ def test_p_librarian(test_librarian):
     print(test_librarian)
     assert len(test_librarian.get_permissions()) == 5
 
+
+#-------------------
+
+def test_UserMeta():
+    with pytest.raises(TypeError):
+        class test_user(User):
+            #without get_permission
+            pass
