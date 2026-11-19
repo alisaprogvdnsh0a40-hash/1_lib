@@ -1,4 +1,7 @@
 # 1_lib
+ 
+ 
+ (Library managment app)
  |
  |__cli.py   (main app and functions)
  |
@@ -27,4 +30,11 @@
     |       |__PermissionDenied(LibraryError)
     |       |__BookNotAvailable(LibraryError)
     |       
-            
+
+==>> run cli.py to run a library with default values.
+(can be add another users and books)
+
++library have three permission for three position(guest,member,librarian)
+  with their own access.
+
++password for define new librarian user is (1234).
