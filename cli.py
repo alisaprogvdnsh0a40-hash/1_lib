@@ -68,8 +68,10 @@ def login1(user_id):
 
 
             elif isinstance(Lib1[user_id],Member):
-                print("adad semat ra vared konid  \n"
-                "(my_books = 0)  ( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 )")
+                print("adad delkhah ra vared konid \n"
+                "(my_books = 0)  ( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 )\n"\
+                "(search_book = 4)"
+                )
                 key = int(input())
 
                 if key == 0:
@@ -93,10 +95,15 @@ def login1(user_id):
                         raise LibraryError("shabak peyda nashod")
                     Lib1.return_book(Lib1[user_id],Lib1[shabak])
 
+                elif key == 4:
+                    print("shabak ketab:")
+                    isbn = str(input())
+                    print(Lib1[isbn])
+
             elif isinstance(Lib1[user_id],Librarian):
-                print("adad semat ra vared konid  \n"
+                print("adad delkhah ra vared konid \n"
                 "(my_books = 0)  ( view_books = 1 )  ( borrow_books = 2 )  ( return_books = 3 ) \n" \
-                "( add_book= 4 ) ( remove_book= 5 )")
+                "( add_book = 4 ) ( remove_book = 5 ) (search_book = 6)")
                 key = int(input())
             
 
@@ -139,6 +146,12 @@ def login1(user_id):
                     shabak = str(input())
 
                     Lib1.remove_book(Lib1[user_id],shabak)
+
+                elif key == 6:
+                    print("shabak ketab:")
+                    isbn = str(input())
+                    print(Lib1[isbn])
+
 
             print("barmigardid be meno?\n (na = 0),(bale =1)")
             choice = int(input())
